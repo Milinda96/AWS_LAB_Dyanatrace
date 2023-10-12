@@ -3,5 +3,7 @@
   remote_user: ubuntu
   become: yes
   tasks:
-    - name: Restart the microservice using nohup
-      shell: "nohup java -Xms256m -Xmx512m -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=./java_pid.hprof -jar /home/ubuntu/AIOpsLab/location-service/location-service-0.0.1-SNAPSHOT.jar > location.log 2>&1 &"
+    - name: Create a file in the home directory
+      shell: echo "Hey guys!" > $HOME/hello.txt
+      args:
+        creates: "$HOME/hello.txt"
