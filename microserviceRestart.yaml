@@ -4,6 +4,6 @@
   become: yes
   tasks:
     - name: Create a file
-      shell: echo $(date) " - Testing Auto Remediation" > /var/lib/awx/projects/AIOPS/AutoRemediation.txt
+      shell: echo $(date) " - Testing Auto Remediation" >> /var/lib/awx/projects/AIOPS/AutoRemediation.txt
       args:
         creates: "/var/lib/awx/projects/AIOPS/AutoRemediation.txt"
